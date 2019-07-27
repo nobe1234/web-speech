@@ -14,6 +14,19 @@
 const speech = new webkitSpeechRecognition();
 speech.lang = "ja-JP";
 
+const btn = document.getElementById("btn");
+const content = document.getElementById("content");
+
+btn.addEventListener('click',function(){
+  // 音声認識をスタート
+  speech.start();
+});
+
+speech.addEventListener('result',function(e){
+  // 音声認識で取得した情報を、コンソール画面に表示
+  console.log(e);
+});
+
 </script>    
 </body>    
 
